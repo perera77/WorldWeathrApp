@@ -1,0 +1,10 @@
+<div class="card bg-light" *ngIf="city" style="margin:20px;">
+  <div class="card-header">
+    <h2><strong>Country:&nbsp;</strong>{{city.country}} &nbsp;&nbsp;<strong>City:&nbsp;</strong>{{city.name}}</h2>
+  </div>
+  <div class="card-body">
+    <app-city-weather [city]="city"></app-city-weather>
+    <br/>
+    <app-city-forecast [city]="city"></app-city-forecast>
+  </div>
+</div>

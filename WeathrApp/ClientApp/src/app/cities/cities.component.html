@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="container row">
+    <button type="button" class="btn btn-outline-dark col-*-* align-top" style="height:40px" (click)="showCountryList = true"><span class="badge badge-dark">+</span>Add City</button>
+
+    <p *ngIf="showCountryList" class="col-*-* align-top">&nbsp; &nbsp; &nbsp; Select the country:&nbsp; </p>
+    <ul *ngIf="showCountryList" class="country_list col-*-* align-top">
+      <li *ngFor="let countryName of countryList" (click)="countrySelected(countryName)">{{countryName}}</li>
+    </ul>
+
+    <p *ngIf="showAvailableCities" class="col-*-* align-top">&nbsp; &nbsp; &nbsp; Select the city: &nbsp;</p>
+
+    <ul *ngIf="showAvailableCities" class="city_list col-*-* align-top">
+      <li *ngFor="let cityName of availableCities" (click)="addCity(cityName)">{{cityName}}</li>
+    </ul>
+  </div>
+</div>
+
+<div class="card" *ngIf="FavariteCityList">
+  <div class="card-body">
+    <h2 class="card-title">Favarite Cities</h2>
+    <ul class="favarite-cities">
+      <li *ngFor="let city of FavariteCityList" (click)="selectCity(city)">
+        <p><span class="badge">{{city.country}}</span> {{city.name}}</p>
+        <button class="delete" title="Remove city" (click)="removeCity(city)">x</button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<app-city-detail [city]="selectedCity"></app-city-detail>
+

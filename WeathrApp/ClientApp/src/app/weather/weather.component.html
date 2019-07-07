@@ -1,0 +1,9 @@
+<ul style="list-style-type: none">
+  <li *ngFor="let city of FavariteCityList">
+    <div class="card bg-light" *ngIf="city" style="margin:20px;">
+      <h4><strong>Country:&nbsp;</strong>{{city.country}} &nbsp;&nbsp;<strong>City:&nbsp;</strong>{{city.name}}</h4>
+      <app-city-weather [city]="city"></app-city-weather>
+      </div>
+  </li>
+
+</ul>

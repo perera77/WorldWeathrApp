@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Forcasts</h4>
+  </div>
+  <div *ngIf="forecasts" class="card-body row">
+    <div class="col-*-*" (click)="showHideDetails()" style="border: 1px solid #cecece" data-toggle="tooltip" title="Click to show/hide details">
+      <app-forecast-chart [Forecasts]="forecasts"></app-forecast-chart>
+
+      <app-forecast-wind-chart [Forecasts]="forecasts"></app-forecast-wind-chart>
+    </div>
+
+    <div class="col-*-*  bg-white">
+      <table class="table table-striped" style="border:double" *ngIf="ShowDetails">
+        <thead>
+          <tr>
+            <td>Time</td>
+            <td>Main</td>
+            <td>Temperature (&#8451;)</td>
+            <td>Pressure (hPa)</td>
+            <td>Humidity (%)</td>
+            <td>Wind speed (m/s)/dir</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let forecast of forecasts">
+            <td>{{forecast.dateTime}}</td>
+            <td>{{forecast.main}}</td>
+            <td>{{forecast.temp-273}}</td>
+            <td>{{forecast.pressure}}</td>
+            <td>{{forecast.humidity}}</td>
+            <td>{{forecast.wind_speed}}/{{forecast.wind_direction}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

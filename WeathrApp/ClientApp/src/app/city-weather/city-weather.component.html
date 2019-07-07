@@ -1,0 +1,35 @@
+<div class="card bg-white">
+  <div class="card-header">
+    <h4>Current Weather as of {{CalculationDate}}</h4>
+  </div>
+  <div class="card-body">
+    <table class="table table-striped" style="width:400px; border:double">
+      <tbody>
+        <tr>
+          <td>{{weather.main}}</td>
+          <td>{{weather.description}}</td>
+        </tr>
+        <tr>
+          <td>Temperature</td>
+          <td>{{weather.temp}} &#8451;</td>
+        </tr>
+        <tr>
+          <td>Presure</td>
+          <td>{{weather.pressure}} hPa</td>
+        </tr>
+        <tr>
+          <td>Humidity</td>
+          <td>{{weather.humidity}}%</td>
+        </tr>
+        <tr>
+          <td>Visibility</td>
+          <td>{{weather.visibility}} m</td>
+        </tr>
+        <tr>
+          <td>Wind</td>
+          <td>{{weather.wind_speed}} m/s &nbsp; &nbsp; {{weather.wind_direction}} &deg;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
